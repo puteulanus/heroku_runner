@@ -14,3 +14,6 @@ do
 	cd ..
 	rm -rf php-getting-started
 done
+
+cd ..
+rm -rf heroku_init
