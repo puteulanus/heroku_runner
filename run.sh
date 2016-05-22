@@ -27,6 +27,7 @@ do
 	chmod +x /tmp/screen.sh
 	screen -dm -S h$i '/tmp/screen.sh'
 done
+sleep 5
 rm -rf /tmp/screen.sh
 
 # stop here
