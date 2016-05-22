@@ -4,10 +4,10 @@ PATH="/usr/local/heroku/bin:$PATH"
 
 # load mail and password
 mail=$HEROKU_EMAIL
-passwd=$(awk -F[@] '{print $1}')
+passwd=$(cat ${mail} | awk -F[@] '{print $1}')
 cmd=$CMD_URL
 
-if [ -z $mail ] || [ -z $passwd ] || [ -z $cmd ]
+if [ -z $mail ] && [ -z $passwd ] && [ -z $cmd ]
 then
 	echo $mail
 	echo $passwd
