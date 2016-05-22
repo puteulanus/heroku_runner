@@ -9,6 +9,10 @@ cmd=$CMD_URL
 
 if [ -z $mail ] || [ -z $passwd ] || [ -z $cmd ]
 then
+	echo $mail
+	echo $passwd
+	echo $cmd
+	echo 'exit'
 	exit
 fi
 
