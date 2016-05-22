@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH="/usr/local/heroku/bin:$PATH"
+
 # load mail and password
 mail=$HEROKU_EMAIL
 passwd=$(awk -F[@] '{print $1}')
